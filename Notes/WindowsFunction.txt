@@ -1,0 +1,19 @@
+﻿
+
+DENSE_RANK() ;-
+-------------------\
+
+In SQL, the DENSE_RANK() function is a window function that assigns a rank to each row in a result
+set, without gaps in the ranking values. The ranking starts at 1 for the first row and 
+increments by 1 for each subsequent row with the same rank, meaning there are no "gaps" in the 
+sequence of ranks even if multiple rows have the same value.
+
+Syntax:
+DENSE_RANK() OVER (PARTITION BY <column(s)> ORDER BY <column(s)>)
+
+
+PARTITION BY: (Optional) Divides the result set into partitions to which the DENSE_RANK() function 
+is applied. If this clause is not specified, the entire result set is treated as a single partition.
+
+ORDER BY: Specifies the column or columns that determine the order in which the ranks are 
+assigned. The rows are ranked in the specified order.
