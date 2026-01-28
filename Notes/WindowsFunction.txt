@@ -17,3 +17,24 @@ is applied. If this clause is not specified, the entire result set is treated as
 
 ORDER BY: Specifies the column or columns that determine the order in which the ranks are 
 assigned. The rows are ranked in the specified order.
+
+
+OFFSET FETCH():-
+----------------
+  The OFFSET and FETCH clauses are options of the ORDER BY clause.
+  They use to allow to limit the number of rows returned 
+  by a query.
+
+  syntax:
+
+  ORDER BY column_list [ASC |DESC]
+OFFSET offset_row_count {ROW | ROWS}
+FETCH {FIRST | NEXT} fetch_row_count {ROW | ROWS} ONLY
+
+The OFFSET clause is mandatory, while the FETCH clause 
+is optional. Additionally, FIRST and NEXT are synonyms
+and can be used interchangeably. Similarly, you can 
+use ROW and ROWS interchangeably.
+
+ Use case:
+     In Paginations
