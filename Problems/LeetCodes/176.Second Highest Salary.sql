@@ -54,3 +54,16 @@ from cte
 select
 max(Salary) as "SecondHighestSalary"
 from cte where r=2
+
+
+/* 4. Second, Third value print 
+*/
+select name, ranks from (
+ select name, Dense_Rank() over (order by name) as ranks from EMPLOYEE
+) as RankEmp  where ranks=3; 
+
+with cts as (
+select name,Dense_Rank() over (order by name) as ranks from EMPLOYEE
+)
+
+select name, ranks from cts where ranks =4;
